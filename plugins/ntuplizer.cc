@@ -70,7 +70,7 @@ class ntuplizer : public edm::one::EDAnalyzer<edm::one::SharedResources>  {
       // --- Variables
       //
 
-      bool isData = false;
+      bool isData = true;
 
       // Event
       Int_t event = 0;
@@ -120,7 +120,7 @@ ntuplizer::ntuplizer(const edm::ParameterSet& iConfig) {
 
    counts = new TH1F("counts", "", 1, 0, 1);
 
-   isData = consumes<edm::View<reco::Track> >  (parameters.getParameter<edm::InputTag>("displacedGlobalCollection"));
+   isData = parameters.getParameter<bool>("isData");
    dglToken = consumes<edm::View<reco::Track> >  (parameters.getParameter<edm::InputTag>("displacedGlobalCollection"));
    dsaToken = consumes<edm::View<reco::Track> >  (parameters.getParameter<edm::InputTag>("displacedStandAloneCollection"));
    dmuToken = consumes<edm::View<pat::Muon> >  (parameters.getParameter<edm::InputTag>("displacedMuonCollection"));

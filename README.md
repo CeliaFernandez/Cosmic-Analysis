@@ -1,18 +1,22 @@
 # Standard Ntuplizer
 
 This code serves as a template for new Ntuplizers to work with CMSSW. Basic instructions for installation and standard modifications can be found below.
-It presents an example where a ROOT tree if filled with plain Ntuples made from pat::Muon variables read from MiniAOD. It is configured to read Cosmic data from the NoBPTX dataset.
+It presents an example where a ROOT tree if filled with plain Ntuples made from pat::Muon variables read from MiniAOD. It is configured to read data from the Muon dataset of 2022:
+
+```
+/Muon/Run2022C-27Jun2023-v1/MINIAOD
+```
 
 The Ntuplizer is an EDAnalyzer. More information about this class and its structure can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookWriteFrameworkModule.
 
 ## How to install
 
-Recommended release for this analyzer is CMSSW_12_4_0 or later. Commands to setup the analyzer are:
+Recommended release for this analyzer is CMSSW_12_6_0 or later. Commands to setup the analyzer are:
 
 ```
-cmsrel CMSSW_12_4_0
+cmsrel CMSSW_12_6_0
 
-cd CMSSW_12_4_0/src
+cd CMSSW_12_6_0/src
 
 cmsenv
 
@@ -20,7 +24,7 @@ mkdir Analysis
 
 cd Analysis
 
-git clone git@github.com:CeliaFernandez/standard-Ntuplizer.git
+git clone git@github.com:Parrot-training/standard-Ntuplizer.git
 
 scram b -j 8
 ```

@@ -26,13 +26,13 @@ nEvents = 1000
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(nEvents) )
 
 # Read events
-listOfFiles = ['/store/data/Run2022D/NoBPTX/MINIAOD/PromptReco-v1/000/357/503/00000/ef047f11-b46d-4ae6-88c5-3f5ca19591be.root']
+listOfFiles = ['/store/data/Run2022C/Muon/MINIAOD/27Jun2023-v1/25220000/47616717-1312-4304-b6d0-f5c43132bcd7.root']
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring( listOfFiles ),
     secondaryFileNames = cms.untracked.vstring(),
     skipEvents = cms.untracked.uint32(0)
   )
-process.GlobalTag = GlobalTag(process.GlobalTag, '124X_mcRun3_2022_realistic_v5')
+process.GlobalTag = GlobalTag(process.GlobalTag, '124X_dataRun3_v15')
 
 ## Define the process to run 
 ## 
