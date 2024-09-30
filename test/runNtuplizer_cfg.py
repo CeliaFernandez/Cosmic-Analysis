@@ -26,7 +26,7 @@ nEvents = 1000
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(nEvents) )
 
 # Read events
-listOfFiles = ['/store/data/Run2022C/Muon/MINIAOD/27Jun2023-v1/25220000/47616717-1312-4304-b6d0-f5c43132bcd7.root']
+listOfFiles = ['file:/ceph/cms/store/user/fernance/Cosmics/CosmicPPreco-CosmicDTLocalReco/240926_184257/0000/output_320.root']
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring( listOfFiles ),
     secondaryFileNames = cms.untracked.vstring(),
@@ -36,7 +36,7 @@ process.GlobalTag = GlobalTag(process.GlobalTag, '124X_dataRun3_v15')
 
 ## Define the process to run 
 ## 
-process.load("Analysis.standard-Ntuplizer.ntuples_cfi")
+process.load("Analysis.Cosmic-Analysis.ntuples_cfi")
 
-process.p = cms.EndPath(process.ntuples)
+process.p = cms.EndPath(process.analysis)
 
